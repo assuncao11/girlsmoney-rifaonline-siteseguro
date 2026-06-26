@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { Trophy, Medal, Award, Sparkles, CheckCircle2, MessageCircle, ShieldCheck, Loader2 } from "lucide-react";
 import { z } from "zod";
 
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
