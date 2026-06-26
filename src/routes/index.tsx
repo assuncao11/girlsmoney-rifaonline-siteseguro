@@ -105,7 +105,7 @@ function Index() {
 
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-90" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
         <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28 text-center text-white">
           <Badge className="bg-white/15 text-white border-white/20 backdrop-blur mb-6">
