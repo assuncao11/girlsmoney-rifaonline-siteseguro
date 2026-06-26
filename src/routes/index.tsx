@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { Trophy, Medal, Award, Sparkles, CheckCircle2, MessageCircle, ShieldCheck, Loader2 } from "lucide-react";
 import { z } from "zod";
 
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -104,13 +105,13 @@ function Index() {
 
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-90" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
+        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
         <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28 text-center text-white">
           <Badge className="bg-white/15 text-white border-white/20 backdrop-blur mb-6">
-            <Sparkles className="h-3.5 w-3.5 mr-1" /> Rifa Online
+            <Sparkles className="h-3.5 w-3.5 mr-1 icon-gold" /> Rifa Online
           </Badge>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight">Girls Money</h1>
+          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight hero-headline">Girls Money</h1>
           <p className="mt-4 text-lg sm:text-xl text-white/85 max-w-xl mx-auto">
             Escolha seus números e concorra a prêmios incríveis.
           </p>
@@ -123,7 +124,7 @@ function Index() {
             </Button>
           </div>
           <p className="mt-6 text-xs text-white/70 inline-flex items-center gap-1.5">
-            <ShieldCheck className="h-3.5 w-3.5" /> Pagamento via Pix • Reserva imediata
+            <ShieldCheck className="h-3.5 w-3.5 icon-gold" /> Pagamento via Pix • Reserva imediata
           </p>
         </div>
       </section>
@@ -135,9 +136,9 @@ function Index() {
           <p className="text-muted-foreground mt-2">Três chances de ganhar.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-5">
-          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
-          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7" />} title="Pix" amount="R$ 1.000,00" color="silver" />
-          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
+          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
+          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 1.000,00" color="silver" />
+          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
         </div>
       </section>
 
@@ -238,7 +239,7 @@ function Index() {
 
             <Card className="p-4 text-xs text-muted-foreground border-dashed">
               <div className="flex gap-2">
-                <MessageCircle className="h-4 w-4 mt-0.5 text-primary shrink-0" />
+                <MessageCircle className="h-4 w-4 mt-0.5 icon-gold shrink-0" />
                 <p>
                   Pagamentos para a gerente <strong className="text-foreground">Agnys Assunção</strong>. Envie o comprovante para o WhatsApp{" "}
                   <a href={`https://wa.me/${WHATSAPP_ADMIN}`} target="_blank" rel="noreferrer" className="text-primary font-medium underline">
@@ -281,17 +282,17 @@ function PrizeCard({ place, icon, title, amount, color }: { place: string; icon:
 
 function PriceCard({ qty, price, highlight }: { qty: number; price: number; highlight?: boolean }) {
   return (
-    <Card className={`p-6 relative ${highlight ? "ring-2 ring-primary shadow-glow" : ""}`} style={{ background: "var(--gradient-card)" }}>
+    <Card className={`p-6 relative ${highlight ? "ring-2 ring-gold shadow-glow" : ""}`} style={{ background: "var(--gradient-card)" }}>
       {highlight && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2" style={{ background: "var(--gradient-primary)", color: "white" }}>
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-white border-gold">
           Melhor custo-benefício
         </Badge>
       )}
       <div className="text-sm text-muted-foreground">{qty} {qty === 1 ? "número" : "números"}</div>
       <div className="text-4xl font-bold mt-2 tracking-tight">R$ {price},00</div>
       <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Reserva imediata</li>
-        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Pagamento via Pix</li>
+        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 icon-gold" /> Reserva imediata</li>
+        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 icon-gold" /> Pagamento via Pix</li>
       </ul>
     </Card>
   );

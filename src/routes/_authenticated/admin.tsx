@@ -211,8 +211,8 @@ function Stat({ icon, label, value }: { icon: React.ReactNode; label: string; va
   return (
     <Card className="p-5" style={{ background: "var(--gradient-card)" }}>
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
-          {icon}
+        <div className="h-10 w-10 rounded-lg flex items-center justify-center bg-card border border-border shadow-elegant">
+          <span className="icon-gold">{icon}</span>
         </div>
         <div>
           <div className="text-xs text-muted-foreground">{label}</div>
