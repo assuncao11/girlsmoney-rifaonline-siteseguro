@@ -282,17 +282,17 @@ function PrizeCard({ place, icon, title, amount, color }: { place: string; icon:
 
 function PriceCard({ qty, price, highlight }: { qty: number; price: number; highlight?: boolean }) {
   return (
-    <Card className={`p-6 relative ${highlight ? "ring-2 ring-primary shadow-glow" : ""}`} style={{ background: "var(--gradient-card)" }}>
+    <Card className={`p-6 relative ${highlight ? "ring-2 ring-gold shadow-glow" : ""}`} style={{ background: "var(--gradient-card)" }}>
       {highlight && (
-        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2" style={{ background: "var(--gradient-primary)", color: "white" }}>
+        <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-white border-gold">
           Melhor custo-benefício
         </Badge>
       )}
       <div className="text-sm text-muted-foreground">{qty} {qty === 1 ? "número" : "números"}</div>
       <div className="text-4xl font-bold mt-2 tracking-tight">R$ {price},00</div>
       <ul className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Reserva imediata</li>
-        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-success" /> Pagamento via Pix</li>
+        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 icon-gold" /> Reserva imediata</li>
+        <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 icon-gold" /> Pagamento via Pix</li>
       </ul>
     </Card>
   );
