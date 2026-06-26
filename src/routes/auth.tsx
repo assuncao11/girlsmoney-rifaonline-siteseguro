@@ -48,8 +48,8 @@ function AuthPage() {
     <div className="min-h-screen flex items-center justify-center px-4" style={{ background: "var(--gradient-hero)" }}>
       <Card className="w-full max-w-sm p-6">
         <div className="flex items-center gap-2 mb-1">
-          <div className="h-9 w-9 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
-            <Lock className="h-4 w-4" />
+          <div className="h-9 w-9 rounded-lg flex items-center justify-center text-gold" style={{ background: "var(--gradient-primary)" }}>
+            <Lock className="h-4 w-4 icon-gold" />
           </div>
           <div>
             <h1 className="font-semibold tracking-tight">Área Administrativa</h1>
