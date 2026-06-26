@@ -109,9 +109,9 @@ function Index() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
         <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28 text-center text-white">
           <Badge className="bg-white/15 text-white border-white/20 backdrop-blur mb-6">
-            <Sparkles className="h-3.5 w-3.5 mr-1" /> Rifa Online
+            <Sparkles className="h-3.5 w-3.5 mr-1 icon-gold" /> Rifa Online
           </Badge>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight">Girls Money</h1>
+          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight hero-headline">Girls Money</h1>
           <p className="mt-4 text-lg sm:text-xl text-white/85 max-w-xl mx-auto">
             Escolha seus números e concorra a prêmios incríveis.
           </p>
@@ -124,7 +124,7 @@ function Index() {
             </Button>
           </div>
           <p className="mt-6 text-xs text-white/70 inline-flex items-center gap-1.5">
-            <ShieldCheck className="h-3.5 w-3.5" /> Pagamento via Pix • Reserva imediata
+            <ShieldCheck className="h-3.5 w-3.5 icon-gold" /> Pagamento via Pix • Reserva imediata
           </p>
         </div>
       </section>
