@@ -239,7 +239,7 @@ function Index() {
 
             <Card className="p-4 text-xs text-muted-foreground border-dashed">
               <div className="flex gap-2">
-                <MessageCircle className="h-4 w-4 mt-0.5 text-primary shrink-0" />
+                <MessageCircle className="h-4 w-4 mt-0.5 icon-gold shrink-0" />
                 <p>
                   Pagamentos para a gerente <strong className="text-foreground">Agnys Assunção</strong>. Envie o comprovante para o WhatsApp{" "}
                   <a href={`https://wa.me/${WHATSAPP_ADMIN}`} target="_blank" rel="noreferrer" className="text-primary font-medium underline">
