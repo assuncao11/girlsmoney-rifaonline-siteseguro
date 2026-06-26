@@ -136,9 +136,9 @@ function Index() {
           <p className="text-muted-foreground mt-2">Três chances de ganhar.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-5">
-          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
-          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7" />} title="Pix" amount="R$ 1.000,00" color="silver" />
-          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
+          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
+          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 1.000,00" color="silver" />
+          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
         </div>
       </section>
 
