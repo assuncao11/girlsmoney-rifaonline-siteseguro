@@ -1,0 +1,1 @@
+GRANT SELECT (numero, status, updated_at, participante_id, id) ON public.numeros TO authenticated;
