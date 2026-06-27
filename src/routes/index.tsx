@@ -104,40 +104,8 @@ function Index() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24 text-center text-white">
-          <img
-            src={logoGirlsMoney.url}
-            alt="Girls Money"
-            className="mx-auto mb-8 h-32 w-32 sm:h-40 sm:w-40 rounded-full object-cover shadow-2xl ring-2 ring-white/30"
-          />
-          <Badge className="bg-white/15 text-white border-white/20 backdrop-blur mb-6">
-            <Sparkles className="h-3.5 w-3.5 mr-1 icon-gold" /> Rifa Online
-          </Badge>
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight hero-headline max-w-3xl mx-auto">
-            Garanta o seu número e não fique de fora
-          </h1>
-          <p className="mt-5 text-lg sm:text-xl text-white/85 max-w-xl mx-auto">
-            Escolha seus números e concorra a prêmios incríveis.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" onClick={() => scrollTo("numeros")} className="bg-[#C9A96A] text-[#214D46] hover:bg-[#d8bc83] shadow-glow font-semibold">
-              Escolher meus números
-            </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollTo("premios")} className="bg-transparent border-white/40 text-white hover:bg-white/10">
-              Ver prêmios
-            </Button>
-          </div>
-          <p className="mt-6 text-xs text-white/70 inline-flex items-center gap-1.5">
-            <ShieldCheck className="h-3.5 w-3.5 icon-gold" /> Pagamento via Pix • Reserva imediata
-          </p>
-        </div>
-      </section>
-
       {/* PRÊMIOS */}
+
       <section id="premios" className="mx-auto max-w-6xl px-4 py-20">
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Prêmios</h2>
@@ -260,8 +228,24 @@ function Index() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Girls Money. Todos os direitos reservados.
+      <footer className="border-t border-border py-10 bg-primary/5">
+        <div className="mx-auto max-w-3xl px-4 text-center space-y-3">
+          <div className="inline-flex items-center gap-2 text-primary font-semibold">
+            <Sparkles className="h-4 w-4 icon-gold" />
+            Sorteio: segunda-feira, 29 às 19:00h
+          </div>
+          <p className="text-sm text-muted-foreground">
+            O link da transmissão ao vivo será enviado pelo WhatsApp de cada participante.
+            Caso não receba, solicite no WhatsApp da gerente{" "}
+            <strong className="text-foreground">Agnys Assunção</strong>:{" "}
+            <a href={`https://wa.me/${WHATSAPP_ADMIN}`} target="_blank" rel="noreferrer" className="text-primary font-medium underline">
+              (47) 99115-4611
+            </a>.
+          </p>
+          <p className="text-xs text-muted-foreground pt-3 border-t border-border/60 mt-4">
+            © {new Date().getFullYear()} Girls Money. Todos os direitos reservados.
+          </p>
+        </div>
       </footer>
     </div>
   );
