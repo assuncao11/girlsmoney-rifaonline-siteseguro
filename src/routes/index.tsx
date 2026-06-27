@@ -228,8 +228,24 @@ function Index() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Girls Money. Todos os direitos reservados.
+      <footer className="border-t border-border py-10 bg-primary/5">
+        <div className="mx-auto max-w-3xl px-4 text-center space-y-3">
+          <div className="inline-flex items-center gap-2 text-primary font-semibold">
+            <Sparkles className="h-4 w-4 icon-gold" />
+            Sorteio: segunda-feira, 29 às 19:00h
+          </div>
+          <p className="text-sm text-muted-foreground">
+            O link da transmissão ao vivo será enviado pelo WhatsApp de cada participante.
+            Caso não receba, solicite no WhatsApp da gerente{" "}
+            <strong className="text-foreground">Agnys Assunção</strong>:{" "}
+            <a href={`https://wa.me/${WHATSAPP_ADMIN}`} target="_blank" rel="noreferrer" className="text-primary font-medium underline">
+              (47) 99115-4611
+            </a>.
+          </p>
+          <p className="text-xs text-muted-foreground pt-3 border-t border-border/60 mt-4">
+            © {new Date().getFullYear()} Girls Money. Todos os direitos reservados.
+          </p>
+        </div>
       </footer>
     </div>
   );
