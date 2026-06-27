@@ -46,18 +46,18 @@ function Index() {
   const [submitting, setSubmitting] = useState(false);
 
   async function load() {
-    const { data, error } = await supabase.from("numeros").select("numero,status").order("numero");
+    const { data, error } = await supabase.from("numeros_public").select("numero,status").order("numero");
     if (error) { toast.error("Erro ao carregar números"); return; }
     setNumeros(data as NumeroRow[]);
   }
   useEffect(() => { load(); }, []);
 
   useEffect(() => {
-    const ch = supabase.channel("numeros-rt")
-      .on("postgres_changes", { event: "*", schema: "public", table: "numeros" }, () => load())
-      .subscribe();
-    return () => { supabase.removeChannel(ch); };
+    // Poll for availability updates (public realtime is disabled to avoid exposing participant IDs)
+    const id = setInterval(() => { load(); }, 6000);
+    return () => clearInterval(id);
   }, []);
+
 
   const total = useMemo(() => PRICES[selecionados.length] ?? 0, [selecionados.length]);
 
