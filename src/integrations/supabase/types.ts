@@ -90,7 +90,24 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      numeros_public: {
+        Row: {
+          numero: number | null
+          status: Database["public"]["Enums"]["numero_status"] | null
+          updated_at: string | null
+        }
+        Insert: {
+          numero?: number | null
+          status?: Database["public"]["Enums"]["numero_status"] | null
+          updated_at?: string | null
+        }
+        Update: {
+          numero?: number | null
+          status?: Database["public"]["Enums"]["numero_status"] | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       cancelar_reserva: {
