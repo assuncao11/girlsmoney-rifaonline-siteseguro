@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { Trophy, Medal, Award, Sparkles, CheckCircle2, MessageCircle, ShieldCheck, Loader2 } from "lucide-react";
 import { z } from "zod";
+import logoGirlsMoney from "@/assets/girls-money-logo.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -96,7 +97,7 @@ function Index() {
       <header className="sticky top-0 z-30 backdrop-blur-md bg-background/70 border-b border-border">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg" style={{ background: "var(--gradient-primary)" }} />
+            <img src={logoGirlsMoney.url} alt="Girls Money" className="h-10 w-10 rounded-full object-cover ring-1 ring-[hsl(var(--gold,42_45%_60%))]/40" />
             <span className="font-semibold tracking-tight">Girls Money</span>
           </div>
           <Button variant="ghost" size="sm" onClick={() => navigate({ to: "/auth" })}>Admin</Button>
@@ -107,16 +108,23 @@ function Index() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_50%)]" />
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28 text-center text-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24 text-center text-white">
+          <img
+            src={logoGirlsMoney.url}
+            alt="Girls Money"
+            className="mx-auto mb-8 h-32 w-32 sm:h-40 sm:w-40 rounded-full object-cover shadow-2xl ring-2 ring-white/30"
+          />
           <Badge className="bg-white/15 text-white border-white/20 backdrop-blur mb-6">
             <Sparkles className="h-3.5 w-3.5 mr-1 icon-gold" /> Rifa Online
           </Badge>
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight hero-headline">Girls Money</h1>
-          <p className="mt-4 text-lg sm:text-xl text-white/85 max-w-xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight hero-headline max-w-3xl mx-auto">
+            Garanta o seu número e não fique de fora
+          </h1>
+          <p className="mt-5 text-lg sm:text-xl text-white/85 max-w-xl mx-auto">
             Escolha seus números e concorra a prêmios incríveis.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" onClick={() => scrollTo("numeros")} className="bg-white text-primary hover:bg-white/90 shadow-glow">
+            <Button size="lg" onClick={() => scrollTo("numeros")} className="bg-[#C9A96A] text-[#214D46] hover:bg-[#d8bc83] shadow-glow font-semibold">
               Escolher meus números
             </Button>
             <Button size="lg" variant="outline" onClick={() => scrollTo("premios")} className="bg-transparent border-white/40 text-white hover:bg-white/10">
