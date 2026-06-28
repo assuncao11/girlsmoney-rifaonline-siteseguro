@@ -108,24 +108,23 @@ function Index() {
           <p className="text-muted-foreground mt-2">Três chances de ganhar.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-5">
-          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
-          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 1.000,00" color="silver" />
-          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
+          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 200,00" color="gold" />
+          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 300,00" color="silver" />
+          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 500,00" color="bronze" />
         </div>
       </section>
 
-      {/* VALORES */}
+      {/* VALOR */}
       <section className="mx-auto max-w-6xl px-4 pb-20">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Valores</h2>
-          <p className="text-muted-foreground mt-2">Quanto mais números, maiores as chances.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Valor</h2>
+          <p className="text-muted-foreground mt-2">Cada número por apenas R$ 20,00.</p>
         </div>
-        <div className="grid sm:grid-cols-3 gap-5">
-          <PriceCard qty={1} price={20} />
-          <PriceCard qty={2} price={30} />
-          <PriceCard qty={3} price={40} highlight />
+        <div className="max-w-sm mx-auto">
+          <PriceCard qty={1} price={20} highlight />
         </div>
       </section>
+
 
       {/* GRID + RESUMO */}
       <section id="numeros" className="mx-auto max-w-6xl px-4 pb-24">
