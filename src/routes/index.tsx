@@ -139,7 +139,7 @@ function Index() {
       <section id="numeros" className="mx-auto max-w-6xl px-4 pb-24">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Escolha seus números</h2>
-          <p className="text-muted-foreground mt-2">Selecione até 3 números entre 001 e 350.</p>
+          <p className="text-muted-foreground mt-2">Selecione até 3 números entre 001 e 200.</p>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_360px] gap-8">
