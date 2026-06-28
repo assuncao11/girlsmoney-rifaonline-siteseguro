@@ -56,13 +56,12 @@ function Index() {
   }, []);
 
 
-  const total = useMemo(() => PRICES[selecionados.length] ?? 0, [selecionados.length]);
+  const total = useMemo(() => selecionados.length * PRICE_PER_NUMBER, [selecionados.length]);
 
   function toggle(n: number, status: string) {
     if (status !== "disponivel") { toast.warning("Esse número não está disponível"); return; }
     setSelecionados((prev) => {
       if (prev.includes(n)) return prev.filter((x) => x !== n);
-      if (prev.length >= 3) { toast.warning("Máximo de 3 números por compra"); return prev; }
       return [...prev, n].sort((a, b) => a - b);
     });
   }
@@ -81,9 +80,9 @@ function Index() {
     setSubmitting(false);
     if (error) { toast.error(error.message || "Não foi possível reservar"); load(); return; }
     toast.success("Reserva criada! Redirecionando para o pagamento…");
-    const link = PIX_LINKS[selecionados.length];
-    setTimeout(() => { window.location.href = link; }, 800);
+    setTimeout(() => { window.location.href = PIX_LINK; }, 800);
   }
+
 
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
