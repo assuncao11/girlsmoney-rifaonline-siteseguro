@@ -22,13 +22,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PIX_LINKS: Record<number, string> = {
-  1: "https://link.picpay.com/p/17824988076a3ec5f789343",
-  2: "https://link.picpay.com/p/17824990976a3ec719a2615",
-  3: "https://link.picpay.com/p/17824991816a3ec76d6df0d",
-};
-const PRICES: Record<number, number> = { 1: 20, 2: 30, 3: 40 };
+const PIX_LINK = "https://link.picpay.com/p/17824988076a3ec5f789343";
+const PRICE_PER_NUMBER = 20;
 const WHATSAPP_ADMIN = "5547991154611";
+
 
 type NumeroRow = { numero: number; status: "disponivel" | "reservado" | "pago" };
 
@@ -59,13 +56,12 @@ function Index() {
   }, []);
 
 
-  const total = useMemo(() => PRICES[selecionados.length] ?? 0, [selecionados.length]);
+  const total = useMemo(() => selecionados.length * PRICE_PER_NUMBER, [selecionados.length]);
 
   function toggle(n: number, status: string) {
     if (status !== "disponivel") { toast.warning("Esse número não está disponível"); return; }
     setSelecionados((prev) => {
       if (prev.includes(n)) return prev.filter((x) => x !== n);
-      if (prev.length >= 3) { toast.warning("Máximo de 3 números por compra"); return prev; }
       return [...prev, n].sort((a, b) => a - b);
     });
   }
@@ -84,9 +80,9 @@ function Index() {
     setSubmitting(false);
     if (error) { toast.error(error.message || "Não foi possível reservar"); load(); return; }
     toast.success("Reserva criada! Redirecionando para o pagamento…");
-    const link = PIX_LINKS[selecionados.length];
-    setTimeout(() => { window.location.href = link; }, 800);
+    setTimeout(() => { window.location.href = PIX_LINK; }, 800);
   }
+
 
   function scrollTo(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -112,24 +108,23 @@ function Index() {
           <p className="text-muted-foreground mt-2">Três chances de ganhar.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-5">
-          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Vale-compras O Boticário" amount="R$ 200,00" color="gold" />
-          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 1.000,00" color="silver" />
-          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 2.000,00" color="bronze" />
+          <PrizeCard place="1º Lugar" icon={<Trophy className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 200,00" color="gold" />
+          <PrizeCard place="2º Lugar" icon={<Medal className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 300,00" color="silver" />
+          <PrizeCard place="3º Lugar" icon={<Award className="h-7 w-7 icon-gold" />} title="Pix" amount="R$ 500,00" color="bronze" />
         </div>
       </section>
 
-      {/* VALORES */}
+      {/* VALOR */}
       <section className="mx-auto max-w-6xl px-4 pb-20">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Valores</h2>
-          <p className="text-muted-foreground mt-2">Quanto mais números, maiores as chances.</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Valor</h2>
+          <p className="text-muted-foreground mt-2">Cada número por apenas R$ 20,00.</p>
         </div>
-        <div className="grid sm:grid-cols-3 gap-5">
-          <PriceCard qty={1} price={20} />
-          <PriceCard qty={2} price={30} />
-          <PriceCard qty={3} price={40} highlight />
+        <div className="max-w-sm mx-auto">
+          <PriceCard qty={1} price={20} highlight />
         </div>
       </section>
+
 
       {/* GRID + RESUMO */}
       <section id="numeros" className="mx-auto max-w-6xl px-4 pb-24">
