@@ -22,13 +22,10 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PIX_LINKS: Record<number, string> = {
-  1: "https://link.picpay.com/p/17824988076a3ec5f789343",
-  2: "https://link.picpay.com/p/17824990976a3ec719a2615",
-  3: "https://link.picpay.com/p/17824991816a3ec76d6df0d",
-};
-const PRICES: Record<number, number> = { 1: 20, 2: 30, 3: 40 };
+const PIX_LINK = "https://link.picpay.com/p/17824988076a3ec5f789343";
+const PRICE_PER_NUMBER = 20;
 const WHATSAPP_ADMIN = "5547991154611";
+
 
 type NumeroRow = { numero: number; status: "disponivel" | "reservado" | "pago" };
 
