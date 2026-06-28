@@ -22,9 +22,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PIX_LINK = "https://link.picpay.com/p/17824988076a3ec5f789343";
+const PIX_LINKS: Record<number, string> = {
+  1: "https://link.picpay.com/p/17824988076a3ec5f789343",
+  2: "https://link.picpay.com/p/17826796906a41888a88c3d",
+  3: "https://link.picpay.com/p/17826798116a4189039df58",
+};
 const PRICE_PER_NUMBER = 20;
+const MAX_NUMEROS = 3;
 const WHATSAPP_ADMIN = "5547991154611";
+
 
 
 type NumeroRow = { numero: number; status: "disponivel" | "reservado" | "pago" };
