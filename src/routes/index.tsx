@@ -88,7 +88,8 @@ function Index() {
     setSubmitting(false);
     if (error) { toast.error(error.message || "Não foi possível reservar"); load(); return; }
     toast.success("Reserva criada! Redirecionando para o pagamento…");
-    setTimeout(() => { window.location.href = PIX_LINK; }, 800);
+    const link = PIX_LINKS[selecionados.length];
+    setTimeout(() => { window.location.href = link; }, 800);
   }
 
 
