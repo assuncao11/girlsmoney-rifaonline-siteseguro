@@ -22,9 +22,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const PIX_LINK = "https://link.picpay.com/p/17824988076a3ec5f789343";
+const PIX_LINKS: Record<number, string> = {
+  1: "https://link.picpay.com/p/17824988076a3ec5f789343",
+  2: "https://link.picpay.com/p/17826796906a41888a88c3d",
+  3: "https://link.picpay.com/p/17826798116a4189039df58",
+};
 const PRICE_PER_NUMBER = 20;
+const MAX_NUMEROS = 3;
 const WHATSAPP_ADMIN = "5547991154611";
+
 
 
 type NumeroRow = { numero: number; status: "disponivel" | "reservado" | "pago" };
@@ -62,9 +68,11 @@ function Index() {
     if (status !== "disponivel") { toast.warning("Esse número não está disponível"); return; }
     setSelecionados((prev) => {
       if (prev.includes(n)) return prev.filter((x) => x !== n);
+      if (prev.length >= MAX_NUMEROS) { toast.warning(`Máximo de ${MAX_NUMEROS} números por compra`); return prev; }
       return [...prev, n].sort((a, b) => a - b);
     });
   }
+
 
   async function finalizar() {
     if (selecionados.length === 0) { toast.error("Escolha pelo menos 1 número"); return; }
@@ -80,7 +88,8 @@ function Index() {
     setSubmitting(false);
     if (error) { toast.error(error.message || "Não foi possível reservar"); load(); return; }
     toast.success("Reserva criada! Redirecionando para o pagamento…");
-    setTimeout(() => { window.location.href = PIX_LINK; }, 800);
+    const link = PIX_LINKS[selecionados.length];
+    setTimeout(() => { window.location.href = link; }, 800);
   }
 
 
