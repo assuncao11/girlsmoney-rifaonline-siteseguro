@@ -1,0 +1,1 @@
+DELETE FROM public.numeros WHERE numero > 200;
