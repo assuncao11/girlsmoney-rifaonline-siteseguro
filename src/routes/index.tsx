@@ -68,9 +68,11 @@ function Index() {
     if (status !== "disponivel") { toast.warning("Esse número não está disponível"); return; }
     setSelecionados((prev) => {
       if (prev.includes(n)) return prev.filter((x) => x !== n);
+      if (prev.length >= MAX_NUMEROS) { toast.warning(`Máximo de ${MAX_NUMEROS} números por compra`); return prev; }
       return [...prev, n].sort((a, b) => a - b);
     });
   }
+
 
   async function finalizar() {
     if (selecionados.length === 0) { toast.error("Escolha pelo menos 1 número"); return; }
